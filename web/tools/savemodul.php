@@ -813,6 +813,22 @@ if(isset($_POST['evsecon'])) {
 			$result .= 'leafpassworts1='.$_POST['leafpassworts1']."\n";
 			$writeit = '1';
 		}
+        if(strpos($line, "leafnewuser=") !== false) {
+			$result .= 'leafnewuser='.$_POST['leafnewuser']."\n";
+			$writeit = '1';
+		}
+		if(strpos($line, "leafnewpassword=") !== false) {
+			$result .= 'leafnewpassword='.$_POST['leafnewpassword']."\n";
+			$writeit = '1';
+		}
+        if(strpos($line, "leafnewuserlp2=") !== false) {
+			$result .= 'leafnewuserlp2='.$_POST['leafnewuserlp2']."\n";
+			$writeit = '1';
+		}
+		if(strpos($line, "leafnewpasswordlp2=") !== false) {
+			$result .= 'leafnewpasswordlp2='.$_POST['leafnewpasswordlp2']."\n";
+			$writeit = '1';
+		}
 		if(strpos($line, "i3username=") !== false) {
 			$result .= 'i3username='.$_POST['i3username']."\n";
 			$writeit = '1';

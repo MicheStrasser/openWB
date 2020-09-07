@@ -1,0 +1,6 @@
+[submodule "modules/soc_leaf_new/dartnissanconnect"]
+	path = modules/soc_leafnew1/dartnissanconnect
+	url = https://gitlab.com/tobiaswkjeldsen/dartnissanconnect.git
+[submodule "modules/soc_leafnew/dartnissanconnect"]
+	path = modules/soc_leafnew/dartnissanconnect
+	url = https://gitlab.com/tobiaswkjeldsen/dartnissanconnect.git

@@ -138,6 +138,20 @@ else
 fi
 
 
+echo "check for dart"
+if ! [ -x "$(command -v dart)" ]; then
+    PWDCURR=$(pwd)
+    cd /home/pi
+    wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.9.2/sdk/dartsdk-linux-arm-release.zip
+    unzip dartsdk-linux-arm-release.zip
+    echo 'export PATH="$PATH:/home/pi/dart-sdk/bin"' >> /home/pi/.profile
+    cd $PWDCURR
+	echo "... installed"
+else
+	echo "...ok"
+fi
+
+
 echo "disable cronjob logging"
 if grep -Fxq "EXTRA_OPTS="-L 0"" /etc/default/cron
 then

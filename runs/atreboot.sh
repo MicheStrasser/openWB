@@ -942,6 +942,22 @@ if ! grep -Fq "leafpassworts1=" /var/www/html/openWB/openwb.conf
 then
 	  echo "leafpassworts1=passwort" >> /var/www/html/openWB/openwb.conf
 fi
+if ! grep -Fq "leafnewuser=" /var/www/html/openWB/openwb.conf
+then
+	  echo "leafnewuser=username" >> /var/www/html/openWB/openwb.conf
+fi
+if ! grep -Fq "leafnewpassword=" /var/www/html/openWB/openwb.conf
+then
+	  echo "leafnewpassword=password" >> /var/www/html/openWB/openwb.conf
+fi
+if ! grep -Fq "leafnewuserlp2=" /var/www/html/openWB/openwb.conf
+then
+	  echo "leafnewuserlp2=username" >> /var/www/html/openWB/openwb.conf
+fi
+if ! grep -Fq "leafnewpasswordlp2=" /var/www/html/openWB/openwb.conf
+then
+	  echo "leafnewpasswordlp2=password" >> /var/www/html/openWB/openwb.conf
+fi
 if ! grep -Fq "i3username=" /var/www/html/openWB/openwb.conf
 then
 	  echo "i3username=username" >> /var/www/html/openWB/openwb.conf

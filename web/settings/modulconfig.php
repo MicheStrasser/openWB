@@ -775,6 +775,18 @@
 				if(strpos($line, "leafpassworts1=") !== false) {
 					list(, $leafpassworts1old) = explode("=", $line);
 				}
+                if(strpos($line, "leafnewuser=") !== false) {
+					list(, $leafnewuserold) = explode("=", $line);
+				}
+				if(strpos($line, "leafnewpassword=") !== false) {
+					list(, $leafnewpassworold) = explode("=", $line);
+				}
+                if(strpos($line, "leafnewuserlp2=") !== false) {
+					list(, $leafnewuserlp2old) = explode("=", $line);
+				}
+				if(strpos($line, "leafnewpasswordlp2=") !== false) {
+					list(, $leafnewpassworlp2old) = explode("=", $line);
+				}
 				if(strpos($line, "i3passworts1=") !== false) {
 					list(, $i3passworts1old) = explode("=", $line);
 				}
@@ -1821,6 +1833,7 @@
 							<option <?php if($socmodulold == "none\n") echo "selected" ?> value="none">Nicht vorhanden</option>
 							<option <?php if($socmodulold == "soc_http\n") echo "selected" ?> value="soc_http">SoC HTTP</option>
 							<option <?php if($socmodulold == "soc_leaf\n") echo "selected" ?> value="soc_leaf">SoC Nissan Leaf</option>
+							<option <?php if($socmodulold == "soc_leafnew\n") echo "selected" ?> value="soc_leaf">SoC Nissan Leaf (new)</option>
 							<option <?php if($socmodulold == "soc_i3\n") echo "selected" ?> value="soc_i3">SoC BMW & Mini</option>
 							<option <?php if($socmodulold == "soc_zoe\n") echo "selected" ?> value="soc_zoe">SoC Renault Zoe alt</option>
 							<option <?php if($socmodulold == "soc_myrenault\n") echo "selected" ?> value="soc_myrenault">SoC Renault Zoe MyRenault</option>
@@ -2124,6 +2137,22 @@
 							Nissan Connect Passwort
 						</div>
 					</div>
+                    <div id="socleafnew">
+						<div class="row bg-info">
+							<b><label for="leafnewuser">Benutzername:</label></b>
+							<input type="text" name="leafnewuser" id="leafnewuser" value="<?php echo $leafnewuserold ?>">
+						</div>
+						<div class="row bg-info">
+							Nissan Connect Benutzername
+						</div>
+						<div class="row bg-info">
+							<b><label for="leafnewpassword">Passwort:</label></b>
+							<input type="password" name="leafnewpassword" id="leafnewpassword" value="<?php echo $leafnewpasswordold ?>">
+						</div>
+						<div class="row bg-info">
+							Nissan Connect Passwort
+						</div>
+					</div>
 					<div id="soci3">
 						<div class="row bg-info">
 							<b><label for="i3username">Benutzername:</label></b>
@@ -2184,6 +2213,7 @@
 							$('#socmnone').hide();
 							$('#socmhttp').hide();
 							$('#socleaf').hide();
+							$('#socleafnew').hide();
 							$('#soci3').hide();
 							$('#soczoe').hide();
 							$('#socevnotify').hide();
@@ -2234,6 +2264,9 @@
 
 							if($('#socmodul').val() == 'soc_leaf') {
 								$('#socleaf').show();
+							}
+							if($('#socmodul').val() == 'soc_leafnew') {
+								$('#socleafnew').show();
 							}
 							if($('#socmodul').val() == 'soc_i3') {
 								$('#soci3').show();
@@ -2624,6 +2657,7 @@
 								<option <?php if($socmodul1old == "none\n") echo "selected" ?> value="none">Nicht vorhanden</option>
 								<option <?php if($socmodul1old == "soc_http1\n") echo "selected" ?> value="soc_http1">SoC HTTP</option>
 								<option <?php if($socmodul1old == "soc_leafs1\n") echo "selected" ?> value="soc_leafs1">SoC Nissan Leaf</option>
+								<option <?php if($socmodul1old == "soc_leafnew1\n") echo "selected" ?> value="soc_leafnew1">SoC Nissan Leaf (New)</option>
 								<option <?php if($socmodul1old == "soc_i3s1\n") echo "selected" ?> value="soc_i3s1">SoC BMW i3</option>
 								<option <?php if($socmodul1old == "soc_evnotifys1\n") echo "selected" ?> value="soc_evnotifys1">SoC EVNotify</option>
 								<option <?php if($socmodul1old == "soc_zoelp2\n") echo "selected" ?> value="soc_zoelp2">SoC Zoe alt</option>
@@ -2867,6 +2901,22 @@
 								Nissan Connect Passwort
 							</div>
 						</div>
+                        <div id="socleafnew1">
+							<div class="row bg-info">
+								<b><label for="leafnewuserlp2">Benutzername:</label></b>
+								<input type="text" name="leafnewuserlp2" id="leafnewuserlp2" value="<?php echo $leafnewuserlp2old ?>">
+							</div>
+							<div class="row bg-info">
+								Nissan Connect Benutzername
+							</div>
+							<div class="row bg-info">
+								<b><label for="leafnewpasswordlp2">Passwort:</label></b>
+								<input type="password" name="leafnewpasswordlp2" id="leafnewpasswordlp2" value="<?php echo $leafnewpasswordlp2old ?>">
+							</div>
+							<div class="row bg-info">
+								Nissan Connect Passwort
+							</div>
+						</div>
 						<div id="soci31">
 							<div class="row bg-info">
 								<b><label for="i3usernames1">Benutzername:</label></b>
@@ -2946,6 +2996,7 @@
 								$('#socmnone1').hide();
 								$('#socmhttp1').hide();
 								$('#socleaf1').hide();
+								$('#socleafnew1').hide();
 								$('#soci31').hide();
 								$('#socevnotifylp2').hide();
 								$('#soczoelp2').hide();
@@ -2971,6 +3022,9 @@
 
 								if($('#socmodul1').val() == 'soc_leafs1') {
 									$('#socleaf1').show();
+								}
+								if($('#socmodul1').val() == 'soc_leafnew1') {
+									$('#socleafnew1').show();
 								}
 								if($('#socmodul1').val() == 'soc_myrenaultlp2') {
 									$('#socmyrenaultlp2').show();
